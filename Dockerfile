@@ -23,7 +23,8 @@ RUN apt-get update
 RUN apt-get install -y supervisor wget tar 
 RUN echo [supervisord] | tee -a /etc/supervisor/supervisord.conf ; echo nodaemon=true | tee -a /etc/supervisor/supervisord.conf
 
-ENV STORM_VERSION 0.10.0
+ARG STORM_VERSION
+ENV STORM_VERSION ${STORM_VERSION:-0.10.0}
 
 # Create storm group and user
 ENV STORM_HOME /usr/share/apache-storm

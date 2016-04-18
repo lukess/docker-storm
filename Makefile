@@ -3,7 +3,8 @@
 #
 # Authors: Florian Hussonnois <florian.hussonnois_gmail.com>
 #
-STORM_IMAGE=fhuz/docker-storm
+STORM_IMAGE=lukess/docker-storm
+STORM_VERSION=1.0.0
 
 all:
 
@@ -12,7 +13,7 @@ all:
 .SILENT:
 
 storm-build:
-	docker build --rm -t "$(STORM_IMAGE)" .
+	docker build --build-arg STORM_VERSION=$(STORM_VERSION) --rm -t "$(STORM_IMAGE)" .
 
 deploy-cluster: run-zookeeper run-nimbus run-supervisor run-ui
 	docker ps
