@@ -13,7 +13,7 @@ all:
 .SILENT:
 
 storm-build:
-	docker build --build-arg STORM_VERSION=$(STORM_VERSION) --rm -t "$(STORM_IMAGE)" .
+	docker build --build-arg STORM_VERSION=$(STORM_VERSION) --rm -t "$(STORM_IMAGE):$(STORM_VERSION)" .
 
 deploy-cluster: run-zookeeper run-nimbus run-supervisor run-ui
 	docker ps
