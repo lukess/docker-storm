@@ -25,6 +25,7 @@ RUN echo [supervisord] | tee -a /etc/supervisor/supervisord.conf ; echo nodaemon
 
 ARG STORM_VERSION
 ENV STORM_VERSION ${STORM_VERSION:-0.10.0}
+ENV TERM xterm-256color
 
 # Create storm group and user
 ENV STORM_HOME /usr/share/apache-storm

@@ -56,6 +56,8 @@ fi
 # storm.yaml - replace zookeeper and nimbus ports with environment variables exposed by Docker container(see docker run --link name:alias)
 if [ ! -z "$NIMBUS_PORT_6627_TCP_ADDR" ]; then
   export NIMBUS_ADDR=$NIMBUS_PORT_6627_TCP_ADDR;
+else
+  export NIMBUS_ADDR=$(hostname -i)
 fi
 
 if [ ! -z "$ZK_PORT_2181_TCP_ADDR" ]; then
