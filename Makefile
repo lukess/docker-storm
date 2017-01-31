@@ -4,7 +4,7 @@
 # Authors: Florian Hussonnois <florian.hussonnois_gmail.com>
 #
 STORM_IMAGE=lukess/docker-storm
-STORM_VERSION=1.0.0
+STORM_VERSION=1.0.2
 
 all:
 
@@ -49,7 +49,7 @@ run-ui: run-zookeeper
 	docker run \
 		--name storm-ui \
 		--expose 8080 \
-		-p 49002:8080 \
+		-p 8080:8080 \
 		--link storm-nimbus:nimbus \
 		--link zookeeper:zk \
 		-d $(STORM_IMAGE) \

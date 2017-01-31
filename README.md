@@ -1,6 +1,6 @@
 docker-storm
 =============
-forked from https://github.com/fhussonnois/docker-storm. Bump storm version to 1.0.0
+forked from https://github.com/fhussonnois/docker-storm. Bump storm version to 1.0.2
 
 Installation
 ------------
